@@ -45,4 +45,11 @@ public class HomePageSteps {
 
     }
 
+    @Then("^I can see the itinerary and book the cruise")
+    public void checkItineraryAndBookCruise(){
+
+        objPage.clickCruiseSelected();
+        objPage.clickBookCruiser();
+    }
+
 }

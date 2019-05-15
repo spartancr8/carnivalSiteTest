@@ -29,6 +29,12 @@ public class CarnivalHomePage {
     @FindBy(xpath = "//*[@id=\"sfc-xfilters\"]/ccl-cruise-search-bar-xfilters-pricing/div/div/div/div[2]/div/div/div/span[3]")
     WebElement priceSlider;
 
+    @FindBy(xpath = "//*[@id=\"ccl-cruise-search\"]/ccl-cruise-search/div[2]/ccl-view-result-container/div/ccl-view-result-grid/article[1]/ccl-view-result-grid-item/div/div[1]/ccl-view-result-grid-footer/div/div[2]/a")
+    WebElement cruiseSelected;
+
+    @FindBy(xpath = "//*[@id=\"section-rooms\"]/div/div/booking-button/div/span/span/span[2]")
+    WebElement cruiseBookNow;
+
     public CarnivalHomePage(WebDriver driver){
 
         this.driver = driver;
@@ -55,10 +61,19 @@ public class CarnivalHomePage {
     public void clickPriceDropDown(){
         priceDropDown.click();
     }
+
     public void movePriceSlider(){
         Actions moveSlider = new Actions(driver);
         Action action = (Action) moveSlider.dragAndDropBy(priceSlider, 100, 0).build();
         action.perform();
+    }
+
+    public void clickCruiseSelected(){
+        cruiseSelected.click();
+    }
+
+    public void clickBookCruiser(){
+        cruiseBookNow.click();
     }
 
 }
